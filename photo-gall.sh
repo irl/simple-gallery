@@ -13,7 +13,6 @@ count=$(($count + 1))
 done
 
 echo $count > count.txt
-#replace with rsync instead scp is not practical at all
 rsync -ave ssh old/ example.com:/var/www/example.com/photos/
 
 echo "all done"
