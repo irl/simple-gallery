@@ -1,4 +1,4 @@
-#shell script to remove all files and folders after 30days
+#shell script to process and upload photos
 DIRLISTING=($(find *.jpg))
 count=$(cat count.txt)
 i=0
