@@ -10,4 +10,5 @@ create a folder on your computer called photos-upload/ and place photo-gall.sh i
 requirements:
 -------------
 rsync
+
 imagemagick
