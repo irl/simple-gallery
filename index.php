@@ -8,9 +8,13 @@ foreach (glob("photos/*.jpg") as $filename) {
 $index = $count;
 $check = $_GET['index'];
 if (isset($check)){
-	$index = $_GET['index'];
+        if ($_GET['index'] > $count){
+        	$index = $count;
+        } else {
+		$index = $_GET['index'];
+        }
 }else{
-	$index = $count;
+        $index = $count;
 }
 ?>
 <link rel="stylesheet" type="text/css" href="style.css"/>
