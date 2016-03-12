@@ -22,8 +22,8 @@ if (isset($check)){
 	<span class="instamike">pics.foxk.it</span>
 	<span class="subtitle">Life at my eye level</span> <br />
 	<?php echo "<span class='headlinks'><a href='index.php?index=" . $count . "'>Home</a></span>"; ?>
-	<span class="headlinks"><a href="http://hibby.info">Blog</a></span>
-	<span class="headlinks"><a href="http://foxk.it">Wiki</a></span>
+	<span class="headlinks"><a href="http://myweb.site">Blog</a></span>
+	<span class="headlinks"><a href="http://mynew.link">Wiki</a></span>
 
 </div>
 <div id="wrapper">
@@ -71,14 +71,14 @@ while ($index > $total){
 		if (file_exists("photos/" . $index . ".jpg") == "True") {
 		$exif_data = exif_read_data("photos/" . $index . ".jpg");
 		$edate = date("Y-m-d", strtotime($exif_data['DateTimeOriginal']));
-		echo "<div class='images'><img src='photos/" . $index . ".jpg'> <h2><span>" . $edate . " <br /> <a href='https://pics.foxk.it/photos/" . $index . ".jpg'># " . $index ."</a> </span></h2></div>";
+		echo "<div class='images'><img src='photos/" . $index . ".jpg'> <h2><span>" . $edate . " <br /> <a href='https://web.site/photos/" . $index . ".jpg'># " . $index ."</a> </span></h2></div>";
 		}
 	$index--;
 }
 }
 ?>
 <div class="pagnation">
-<span class="subtitle">All images copyright Dave Hibberd, 2013-2016. Gallery by <a href="https://github.com/yakamok/simple-gallery">yakamo</a></span>
+<span class="subtitle">All images copyright Firstname Lastname, 2016. Gallery by <a href="https://github.com/yakamok/simple-gallery">yakamo</a></span>
 <?php
 if ($menu < $count){
 echo "<span class='pages'><a href='index.php?index=" . $prev . "'>Prev</a></span>";
