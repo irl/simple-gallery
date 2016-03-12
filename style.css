@@ -11,7 +11,7 @@ a {color: #ededed;text-decoration: none;}
 #header {width:700px;margin: 0 auto;height: 50px; padding: 15px;}
 .instamike {font-size: 25px; padding: 15px;color: #e8e8e8;}
 .subtitle {}
-#wrapper {min-width:700px; max-width:80%; margin: 0 auto;}
+#wrapper {width:80%; max-width:1600px; margin: 0 auto;}
 #content {}
 .images {text-align: right; font-size: 15px; color: #696969; padding: 30px;margin-bottom: 30px; background-color:#E8E8E8;border: #f2f2f2 solid 1px;}
 .pagnation {text-align: right; margin-bottom: 5px;}
