@@ -8,22 +8,32 @@ foreach (glob("photos/*.jpg") as $filename) {
 $index = $count;
 $check = $_GET['index'];
 if (isset($check)){
-        if ($_GET['index'] > $count){
-        	$index = $count;
-        } else {
+	if ($_GET['index'] > $count){
+	} else { 
 		$index = $_GET['index'];
-        }
+	}
 }else{
-        $index = $count;
+	$index = $count;
 }
 ?>
 <link rel="stylesheet" type="text/css" href="style.css"/>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <div id="header">
-	<span class="instamike">photo-gallery-name</span>
-	<span class="subtitle">my random photos</span>
+	<span class="instamike">pics.foxk.it</span>
+	<span class="subtitle">Life at my eye level</span> <br />
+	<?php echo "<span class='headlinks'><a href='index.php?index=" . $count . "'>Home</a></span>"; ?>
+	<span class="headlinks"><a href="http://myweb.site">Blog</a></span>
+	<span class="headlinks"><a href="http://mynew.link">Wiki</a></span>
+
 </div>
 <div id="wrapper">
 	<div id="content">
+<?php 
+if (!isset($check)) {
+	echo "<p>Hi friend! You must have stumbled here via a link or direct referral.<br />";
+	echo "This is my Instagram clone where I document my life so I can show it off to the people I love. <br />";
+	echo "That must include you. Congratulations! I hope you enjoy seeing the things that matter to me. </p>";
+} ?>
 <div class="pagnation">
 <?php
 
@@ -34,54 +44,53 @@ $next = 10;
 }
 if ($index < $count){
 	$prev = $index + 10;
-}else if($index == $count){
+}else if($index >= $count){
 	$prev = $count;
 }
 $menu = $index;
 if ($menu < $count){
-echo "<span class='pages'><a href='index.php?index=" . $prev . "'>prev</a></span>";
-echo "<span class='pages'><a href='index.php?index=" . $count . "'>home</a></span>";
+echo "<span class='pages'><a href='index.php?index=" . $prev . "'>Prev</a></span>";
+echo "<span class='pages'><a href='index.php?index=" . $count . "'>Home</a></span>";
 } else{
-echo "<span class='pagesnot'>prev</span>";
-echo "<span class='pagesnot'>home</span>";	
+echo "<span class='pagesnot'>Prev</span>";
+echo "<span class='pagesnot'>Home</span>";	
 }
 if ($menu > 10){
-echo "<span class='pages'><a href='index.php?index=" . $next . "'>next</a></span>";
+echo "<span class='pages'><a href='index.php?index=" . $next . "'>Next</a></span>";
 }else{
-echo "<span class='pagesnot'>next</span>";
+echo "<span class='pagesnot'>Next</span>";
 }
 ?>
 </div>
 <?php
 $total = $index - 10; #must bring down total so index can drop to the same number as total, counting down
-
 if ($index > 0){
+/*echo "<p>Test:" . $index . "</p>";*/
 while ($index > $total){
-	if (isset($images_find[$index])){
-
+		/*echo "<p>Test:" . $index . "</p>";*/
 		if (file_exists("photos/" . $index . ".jpg") == "True") {
 		$exif_data = exif_read_data("photos/" . $index . ".jpg");
-		$edate = $exif_data['DateTime'];
-		echo "<div class='images'><img src='photos/" . $index . ".jpg'> " . $edate . " - image-no - " . $index . "</div>";
+		$edate = date("Y-m-d", strtotime($exif_data['DateTimeOriginal']));
+		echo "<div class='images'><img src='photos/" . $index . ".jpg'> <h2><span>" . $edate . " <br /> <a href='https://web.site/photos/" . $index . ".jpg'># " . $index ."</a> </span></h2></div>";
 		}
-	}
 	$index--;
 }
 }
 ?>
 <div class="pagnation">
+<span class="subtitle">All images copyright Firstname Lastname, 2016. Gallery by <a href="https://github.com/yakamok/simple-gallery">yakamo</a></span>
 <?php
 if ($menu < $count){
-echo "<span class='pages'><a href='index.php?index=" . $prev . "'>prev</a></span>";
-echo "<span class='pages'><a href='index.php?index=" . $count . "'>home</a></span>";
+echo "<span class='pages'><a href='index.php?index=" . $prev . "'>Prev</a></span>";
+echo "<span class='pages'><a href='index.php?index=" . $count . "'>Home</a></span>";
 } else{
-echo "<span class='pagesnot'>prev</span>";
-echo "<span class='pagesnot'>home</span>";	
+echo "<span class='pagesnot'>Prev</span>";
+echo "<span class='pagesnot'>Home</span>";	
 }
 if ($menu > 10){
-echo "<span class='pages'><a href='index.php?index=" . $next . "'>next</a></span>";
+echo "<span class='pages'><a href='index.php?index=" . $next . "'>Next</a></span>";
 }else{
-echo "<span class='pagesnot'>next</span>";
+echo "<span class='pagesnot'>Next</span>";
 }
 ?>
 </div>

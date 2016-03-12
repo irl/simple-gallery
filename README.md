@@ -2,6 +2,7 @@
 simple photos gallery
 
 Example: http://photos.yakamo.org
+Example: http://pics.foxk.it
 
 This is a simple single file photo gallery, this is very rough and improvements n suggestions welcome.
 
@@ -14,7 +15,6 @@ requirements:
 rsync
 
 imagemagick
-
 
 ToDo:
 -----

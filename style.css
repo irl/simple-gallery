@@ -1,20 +1,51 @@
 body, input, textarea {
     color:#ADADAD;
-    font-family: Helvetica,"Helvetica Neue",Arial,sans-serif,Georgia,serif;
- 	font-size: 13px;
- 	line-height:25px;
- 	padding: 0;
- 	margin: 0;
- 	/*background-color: #F0F0F0;*/
- 	background-color: #0C0900;
- }a {color: #ededed;text-decoration: none;}
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    line-height:25px;
+    padding: 0;
+    margin: 0;
+    background-color: #0C0900;
+}
+a {color: #ededed;text-decoration: none;}
 #header {width:700px;margin: 0 auto;height: 50px; padding: 15px;}
-.instamike {font-size: 25px; padding: 15px;color: #e8e8e8;}
+.instamike {font-size: 25px; font-weight: bold; padding: 15px;color: #e8e8e8;}
 .subtitle {}
-#wrapper {width:700px;margin: 0 auto;}
+#wrapper {
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width:1200px;
+    margin: 0 auto;
+}
 #content {}
-.images {text-align: right; font-size: 9px; color: #696969; padding: 30px;margin-bottom: 30px; background-color:#E8E8E8;border: #f2f2f2 solid 1px;}
+.images {
+    text-align: right; 
+    font-size: 15px; 
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px; 
+}
+img {
+    max-width: 1200px;
+}
+h2 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+h2 span { 
+    color: white; 
+    font: bold 24px/45px; 
+    letter-spacing: -1px;  
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    line-height:45px;
+}
+
 .pagnation {text-align: right; margin-bottom: 5px;}
 .pages {padding-left: 10px;}
+.headlinks {padding-left: 15px;}
 .pagesnot{color: #5c5c5c; padding-left: 10px;}
-img {border: solid 1px #999999;} 
