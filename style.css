@@ -16,5 +16,6 @@ body, input, textarea {
 .images {text-align: right; font-size: 9px; color: #696969; padding: 30px;margin-bottom: 30px; background-color:#E8E8E8;border: #f2f2f2 solid 1px;}
 .pagnation {text-align: right; margin-bottom: 5px;}
 .pages {padding-left: 10px;}
+.headlinks {padding-left: 15px;}
 .pagesnot{color: #5c5c5c; padding-left: 10px;}
 img {border: solid 1px #999999;} 
