@@ -71,7 +71,7 @@ while ($index > $total){
 		if (file_exists("photos/" . $index . ".jpg") == "True") {
 		$exif_data = exif_read_data("photos/" . $index . ".jpg");
 		$edate = date("Y-m-d", strtotime($exif_data['DateTimeOriginal']));
-		echo "<div class='images'><img src='photos/" . $index . ".jpg'> " . $edate . " - image-no - " . $index . "</div>";
+		echo "<div class='images'><img src='photos/" . $index . ".jpg'> <h2><span>" . $edate . " <br /> <a href='https://pics.foxk.it/photos/" . $index . ".jpg'># " . $index ."</a> </span></h2></div>";
 		}
 	$index--;
 }
