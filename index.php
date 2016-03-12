@@ -17,6 +17,7 @@ if (isset($check)){
 }
 ?>
 <link rel="stylesheet" type="text/css" href="style.css"/>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <div id="header">
 	<span class="instamike">pics.foxk.it</span>
 	<span class="subtitle">Life at my eye level</span> <br />

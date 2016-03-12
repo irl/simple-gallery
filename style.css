@@ -1,19 +1,19 @@
 body, input, textarea {
     color:#ADADAD;
-    font-family: Helvetica,"Helvetica Neue",Arial,sans-serif,Georgia,serif;
- 	font-size: 13px;
- 	line-height:25px;
- 	padding: 0;
- 	margin: 0;
- 	/*background-color: #F0F0F0;*/
- 	background-color: #0C0900;
- }a {color: #ededed;text-decoration: none;}
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    line-height:25px;
+    padding: 0;
+    margin: 0;
+    background-color: #0C0900;
+}
+a {color: #ededed;text-decoration: none;}
 #header {width:700px;margin: 0 auto;height: 50px; padding: 15px;}
 .instamike {font-size: 25px; padding: 15px;color: #e8e8e8;}
 .subtitle {}
 #wrapper {width:700px;margin: 0 auto;}
 #content {}
-.images {text-align: right; font-size: 9px; color: #696969; padding: 30px;margin-bottom: 30px; background-color:#E8E8E8;border: #f2f2f2 solid 1px;}
+.images {text-align: right; max-width:80%; font-size: 15px; color: #696969; padding: 30px;margin-bottom: 30px; background-color:#E8E8E8;border: #f2f2f2 solid 1px;}
 .pagnation {text-align: right; margin-bottom: 5px;}
 .pages {padding-left: 10px;}
 .headlinks {padding-left: 15px;}
