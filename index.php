@@ -24,8 +24,8 @@ if (isset($check)){
 </head>
 <body>
 <div id="header">
-	<span class="instamike">pics.foxk.it</span>
-	<span class="subtitle">Life at my eye level</span> <br />
+	<span class="instamike">Simple Gallery</span>
+	<span class="subtitle">Catchy Subtitles 'r us</span><br />
 	<?php echo "<span class='headlinks'><a href='index.php?index=" . $count . "'>Home</a></span>"; ?>
 	<span class="headlinks"><a href="http://myweb.site">Blog</a></span>
 	<span class="headlinks"><a href="http://mynew.link">Wiki</a></span>
