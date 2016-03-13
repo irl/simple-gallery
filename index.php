@@ -10,14 +10,14 @@ foreach (glob("photos/*.jpg") as $filename) {
 	$count++;
 }
 $index = $count;
-$check = $_GET['index'];
-if (isset($check)){
+if (isset($_GET['index'])){
 	if ($_GET['index'] > $count){
 	} else { 
 		$index = $_GET['index'];
 	}
 }else{
 	$index = $count;
+	$check = TRUE;
 }
 ?>
 <link rel="stylesheet" type="text/css" href="style.css"/>
@@ -30,15 +30,16 @@ if (isset($check)){
 	<span class="headlinks"><a href="http://myweb.site">Blog</a></span>
 	<span class="headlinks"><a href="http://mynew.link">Wiki</a></span>
 
-</div>
-<div id="wrapper">
-	<div id="content">
 <?php 
-if (!isset($check)) {
+if (isset($check)) {
 	echo "<p>Hi friend! You must have stumbled here via a link or direct referral.<br />";
 	echo "This is my Instagram clone where I document my life so I can show it off to the people I love. <br />";
 	echo "That must include you. Congratulations! I hope you enjoy seeing the things that matter to me. </p>";
-} ?>
+}
+?>
+</div>
+<div id="wrapper">
+	<div id="content">
 <div class="pagnation">
 <?php
 

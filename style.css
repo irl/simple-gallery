@@ -15,10 +15,10 @@ a {
     text-decoration: none;
 }
 #header {
+    text-align: left;
     width:95%;
     max-width: 700px;
     margin: 0 auto;
-    height: 50px; 
 }
 .instamike {font-size: 25px; font-weight: bold; padding: 15px;color: #e8e8e8;}
 .subtitle {} 
@@ -51,9 +51,11 @@ h2 span {
     background: rgb(0, 0, 0); /* fallback color */
     background: rgba(0, 0, 0, 0.7);
     padding: 10px;
-    line-height:45px;
+    line-height:46px;
 }
-
+h2 a {
+    padding-left: 10px;
+}
 .pagnation {text-align: right; margin-bottom: 5px;}
 .pages {padding-left: 10px;}
 .headlinks {padding-left: 15px;}
