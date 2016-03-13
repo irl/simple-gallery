@@ -1,3 +1,7 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1">
 <title>Photos</title>
 <?php
 $images_find = array();
@@ -17,7 +21,8 @@ if (isset($check)){
 }
 ?>
 <link rel="stylesheet" type="text/css" href="style.css"/>
-<link href='https://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body>
 <div id="header">
 	<span class="instamike">pics.foxk.it</span>
 	<span class="subtitle">Life at my eye level</span> <br />
@@ -71,7 +76,7 @@ while ($index > $total){
 		if (file_exists("photos/" . $index . ".jpg") == "True") {
 		$exif_data = exif_read_data("photos/" . $index . ".jpg");
 		$edate = date("Y-m-d", strtotime($exif_data['DateTimeOriginal']));
-		echo "<div class='images'><img src='photos/" . $index . ".jpg'> <h2><span>" . $edate . " <br /> <a href='https://web.site/photos/" . $index . ".jpg'># " . $index ."</a> </span></h2></div>";
+		echo "<div class='images'><img src='photos/" . $index . ".jpg' alt='" . $index ."'> <h2><span>" . $edate . " <br /> <a href='https://web.site/photos/" . $index . ".jpg'># " . $index ."</a> </span></h2></div>";
 		}
 	$index--;
 }
@@ -96,3 +101,5 @@ echo "<span class='pagesnot'>Next</span>";
 </div>
 	</div>
 </div>
+</body>
+</html>
