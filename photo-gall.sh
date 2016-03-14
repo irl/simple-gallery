@@ -9,7 +9,7 @@ do
 	cp ${DIRLISTING[$i]} "backup/"$count".jpg"
 	mv ${DIRLISTING[$i]} $count".jpg"
 	mogrify -auto-orient -resize 1200 $count".jpg"
-	convert $count".jpg" -font Palatino -pointsize 13 -draw "gravity SouthEast fill black text 0,1 'copyright©$YOURNAME' fill white text 0,2 'copyright©$YOURNAME'" $count".jpg"
+	convert $count".jpg" -font Palatino-Bold -pointsize 13 -draw "gravity SouthEast fill black text 0,1 'copyright©$YOURNAME' fill white text 0,2 'copyright©$YOURNAME'" $count".jpg"
 	#add folder called old
 	mv $count".jpg" "old/"
 i=$(($i + 1))
