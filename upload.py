@@ -38,7 +38,7 @@ if len(photos) == 0:
 	print "Could not find any photos"
 else:
 	for x in photos:
-		os.system("mogrify -resize 640 " + x)
+		os.system("mogrify -auto-orient -resize 640 " + x)
 		os.system("mv " + x + " " + maindir + str(count) + ".jpg")
 		count += 1
 
