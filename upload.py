@@ -1,6 +1,7 @@
 #send photos to gallery server
 
 import glob
+import logging
 import os
 
 #------------------------------------------------------------------------
@@ -37,7 +38,7 @@ for x in files:
 			photos.append(x)
 
 if len(photos) == 0:
-	print "Could not find any photos"
+	logger.error("Could not find any photos")
 else:
 	for x in photos:
 		os.system("mogrify -auto-orient -resize 640 " + x)
@@ -48,4 +49,4 @@ else:
 		handle.write(str(count))
 	os.system("rsync -ave ssh " + maindir + "*.jpg " + offsiteloc)
 	os.system("mv " + maindir + "*.jpg " + maindir + "old/")
-	print "Finished Uploading images."
+	logger.info("Finished Uploading images.")
