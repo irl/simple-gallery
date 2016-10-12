@@ -16,12 +16,18 @@ a {
 }
 #header {
     text-align: left;
-    width:95%;
     max-width: 642px;
-    margin: 0 auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
-.instamike {font-size: 25px; font-weight: bold; padding: 15px;color: #e8e8e8;}
-.subtitle {} 
+#nav {
+    width: 100%;
+    text-align: left;
+}.instamike {
+    font-size: 25px;
+    font-weight: 
+    bold;color: #e8e8e8;
+}.subtitle {} 
 #wrapper {
     width: 85%;
     max-width: 642px;
@@ -57,6 +63,9 @@ h2 a {
     padding-left: 10px;
 }
 .pagnation {text-align: right; margin-bottom: 5px;}
+.headerright {float:right;}
+.headerleft {float:left;}
 .pages {padding-left: 10px;}
-.headlinks {padding-left: 15px;}
+.headlinks {padding-right: 15px;}
 .pagesnot{color: #5c5c5c; padding-left: 10px;}
+.clearshit {clear: both;}
