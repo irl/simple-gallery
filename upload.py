@@ -9,6 +9,9 @@ maindir = "/home/" + getpass.getuser() + "/photos-upload/" #where the photos and
 offsiteloc = "url.org:/var/www/photos/" #the server to send to include exact path "myserver.com:/var/www/photos/"
 #------------------------------------------------------------------------
 
+if os.path.exist(maindir) == False:
+	os.makedir(maindir)
+
 olddir = os.path.join(maindir, "old")
 
 if not maindir or not offsiteloc:
@@ -16,12 +19,11 @@ if not maindir or not offsiteloc:
 			       "configuration variables.")
 
 if os.path.exists(os.path.join(maindir, "count.txt")) == False:
-	# Initialise the counter
-	with open(os.path.join(maindir, "count.txt"), "w") as handle:
+	with open(os.path.join(maindir, "count.txt"), "w") as handle:# Initialise the counter
 		handle.write("0")
 
 if os.path.exists(olddir) == False:
-	os.system("mkdir " + olddir)
+	os.makedir(olddir)
 
 with open(os.path.join(maindir, "count.txt"), "r") as handle:
 	count = int(handle.read())
