@@ -27,14 +27,14 @@ class SimpleGallery:
 
     def _check_paths(self):
         if not os.path.exists(self.sourcedir):
-            os.makedir(self.sourcedir)
+            os.mkdir(self.sourcedir)
 
         if not os.path.exists(os.path.join(self.sourcedir, "count.txt")):
             with open(os.path.join(self.sourcedir, "count.txt"), "w") as ch:
                 ch.write("0")
 
         if not os.path.exists(self.olddir):
-            os.makedir(self.olddir)
+            os.mkdir(self.olddir)
 
     def _read_count(self):
         with open(os.path.join(self.sourcedir, "count.txt"), "r") as ch:
