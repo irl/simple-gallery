@@ -19,6 +19,7 @@ imagemagick
 
 ToDo:
 -----
-
+  
+fix "undefined index" error  
 figure out some kind of error checking for missing files in the count sequence  
 add watermarking to the python uploader and options to choose image resize as well  
