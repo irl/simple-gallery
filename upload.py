@@ -11,6 +11,7 @@ offsiteloc = "url.org:/var/www/photos/" #the server to send to include exact pat
 
 olddir = os.path.join(maindir, "old")
 
+logging.basicSetup()
 logger = logging.getLogger("upload")
 logger.setLevel(logging.INFO)
 
