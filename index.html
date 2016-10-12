@@ -1,64 +1,53 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
-<meta name=viewport content="width=device-width, initial-scale=1">
-<title>Photos</title>
-<link rel="stylesheet" type="text/css" href="style.css"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>Photos</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<div id="wrapper">
-	<div id="content">
-<div id="header">
-<div class="headerleft">
-	<span class="instamike">Simple Gallery</span>
-	<span class="subtitle">Catchy Subtitles 'r us</span><br />
-</div>
-<div class="headerright">
-{% if prev %}
-<span class='pages'><a href='index.php?index={{ prev }}'>Prev</a></span>
-{% else %}
-<span class='pagesnot'>Prev</span>
-{% endif %}
-<span class='pages'><a href='index.php?index={{ home }}'>Home</a></span>
-{% if next %}
-<span class='pages'><a href='index.php?index=" . $next . "'>Next</a></span>
-{% else %}
-<span class='pagesnot'>Next</span>
-{% endif %}
-</div>
-<div class="clearshit"></div>
-</div>
-</div>
-<?php
-$total = $index - 10; #must bring down total so index can drop to the same number as total, counting down
-if ($index > 0){
-while ($index > $total){
-		if (file_exists("photos/" . $index . ".jpg") == "True") {
-		$exif_data = exif_read_data("photos/" . $index . ".jpg");
-		$edate = date("Y-m-d", strtotime($exif_data['DateTimeOriginal']));
-		echo "<div class='images'><img src='photos/" . $index . ".jpg' alt='" . $index ."'> <h2><span>" . $edate . ' <br /> <a href="photos/' . $index . '.jpg"> #' . $index ."</a> </span></h2></div>";
-	$index--;
-}
-}
-?>
-<div class="pagnation">
-<span class="subtitle">All images copyright Firstname Lastname, 2016. Gallery by <a href="https://github.com/yakamok/simple-gallery">yakamo</a></span>
-<?php
-if ($menu < $count){
-echo "<span class='pages'><a href='index.php?index=" . $prev . "'>Prev</a></span>";
-echo "<span class='pages'><a href='index.php?index=" . $count . "'>Home</a></span>";
-} else{
-echo "<span class='pagesnot'>Prev</span>";
-echo "<span class='pagesnot'>Home</span>";	
-}
-if ($menu > 10){
-echo "<span class='pages'><a href='index.php?index=" . $next . "'>Next</a></span>";
-}else{
-echo "<span class='pagesnot'>Next</span>";
-}
-?>
-</div>
-	</div>
-</div>
+    <div id="wrapper">
+        <div id="content">
+            <div id="header">
+                <div class="headerleft">
+                    <h1 class="instamike">Simple Gallery</h1>
+                    <h2 class="subtitle">Catchy Subtitles "r us</h1>
+                </div>
+
+
+                <div class="headerright">
+                    {% if prev %}
+                        <span class="pages"><a href="index.php?index={{ prev }}">Prev</a></span>
+                    {% else %}
+                        <span class="pagesnot">Prev</span>
+                    {% endif %}
+                    <span class="pages"><a href="index.php?index={{ home }}">Home</a></span>
+                    {% if next %}
+                        <span class="pages"><a href="index.php?index={{ next }}">Next</a></span>
+                    {% else %}
+                        <span class="pagesnot">Next</span>
+                    {% endif %}
+                </div>
+
+
+                <div class="clearshit">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="images">
+            {% for photo in photos %}
+            <img alt="" . $index ."" src="photos/{{ photo.index }}.jpg">
+
+            <h3><span>{{ photo.date }}<br>
+            <a href="photos/{{ photo.index }}.jpg">#{{ photo.index }}</a></span>
+            </h2>
+            {% endfor %}
+        </div>
+        <span class="subtitle">All images copyright Firstname Lastname, 2016. Gallery by <a href="https://github.com/yakamok/simple-gallery">yakamo</a></span>
+    </div>
 </body>
 </html>
