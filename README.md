@@ -6,7 +6,7 @@ Example: http://pics.foxk.it
 
 This is a simple single file photo gallery, this is very rough and improvements n suggestions welcome.
 
-create a folder on your computer called photos-upload/ and place photo-gall.sh in it, dump your images and then run photo-gall.sh to upload straight to your site, make sure to change locations in photo-gall.sh
+If you want to have a nav bar, just add "nav.txt" with the relevent html links in it, this will appear at the top of the page just under the titles.  
 
 I have added upload.py which is photogall.sh rewriten in python.  
 make sure to create a file called count.txt <- this file keeps track of the file numbering  
