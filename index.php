@@ -5,6 +5,7 @@
 <title>Photos</title>
 <?php
 $images_find = array();
+$count = 0;
 foreach (glob("photos/*.jpg") as $filename) {
 	$images_find[] = $filename;
 	$count++;
