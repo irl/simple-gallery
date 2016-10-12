@@ -5,6 +5,7 @@ install:
   - "pip install pylint"
   - "pip install nose"
   - "pip install coveralls"
+  - "pip install jinja2"
 before_script:
   - "pylint -E simplegallery.py"
 script:
