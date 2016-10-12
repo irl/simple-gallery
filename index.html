@@ -3,24 +3,6 @@
 <head>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <title>Photos</title>
-<?php
-$images_find = array();
-$count = 0;
-foreach (glob("photos/*.jpg") as $filename) {
-	$images_find[] = $filename;
-	$count++;
-}
-$index = $count;
-if (isset($_GET['index'])){
-	if ($_GET['index'] > $count){
-	} else { 
-		$index = $_GET['index'];
-	}
-}else{
-	$index = $count;
-	$check = TRUE;
-}
-?>
 <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
@@ -32,42 +14,20 @@ if (isset($_GET['index'])){
 	<span class="subtitle">Catchy Subtitles 'r us</span><br />
 </div>
 <div class="headerright">
-<?php
-
-if ($index > 20){
-$next = $index - 10;
-}else{
-$next = 10;
-}
-if ($index < $count){
-	$prev = $index + 10;
-}else if($index >= $count){
-	$prev = $count;
-}
-$menu = $index;
-if ($menu < $count){
-echo "<span class='pages'><a href='index.php?index=" . $prev . "'>Prev</a></span>";
-echo "<span class='pages'><a href='index.php?index=" . $count . "'>Home</a></span>";
-} else{
-echo "<span class='pagesnot'>Prev</span>";
-echo "<span class='pagesnot'>Home</span>";	
-}
-if ($menu > 10){
-echo "<span class='pages'><a href='index.php?index=" . $next . "'>Next</a></span>";
-}else{
-echo "<span class='pagesnot'>Next</span>";
-}
-?>
+{% if prev %}
+<span class='pages'><a href='index.php?index={{ prev }}'>Prev</a></span>
+{% else %}
+<span class='pagesnot'>Prev</span>
+{% endif %}
+<span class='pages'><a href='index.php?index={{ home }}'>Home</a></span>
+{% if next %}
+<span class='pages'><a href='index.php?index=" . $next . "'>Next</a></span>
+{% else %}
+<span class='pagesnot'>Next</span>
+{% endif %}
 </div>
 <div class="clearshit"></div>
 </div>
-<?php
-if (file_exists("nav.txt") == 1){
-echo '<div id="nav">';
-include 'nav.txt';
-echo '</div>';
-}
-?>
 </div>
 <?php
 $total = $index - 10; #must bring down total so index can drop to the same number as total, counting down
