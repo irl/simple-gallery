@@ -23,24 +23,14 @@ if (isset($_GET['index'])){
 <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-<div id="header">
-	<span class="instamike">Simple Gallery</span>
-	<span class="subtitle">Catchy Subtitles 'r us</span><br />
-	<?php echo "<span class='headlinks'><a href='index.php?index=" . $count . "'>Home</a></span>"; ?>
-	<span class="headlinks"><a href="http://myweb.site">Blog</a></span>
-	<span class="headlinks"><a href="http://mynew.link">Wiki</a></span>
-
-<?php 
-if (isset($check)) {
-	echo "<p>Hi friend! You must have stumbled here via a link or direct referral.<br />";
-	echo "This is my Instagram clone where I document my life so I can show it off to the people I love. <br />";
-	echo "That must include you. Congratulations! I hope you enjoy seeing the things that matter to me. </p>";
-}
-?>
-</div>
 <div id="wrapper">
 	<div id="content">
-<div class="pagnation">
+<div id="header">
+<div class="headerleft">
+	<span class="instamike">Simple Gallery</span>
+	<span class="subtitle">Catchy Subtitles 'r us</span><br />
+</div>
+<div class="headerright">
 <?php
 
 if ($index > 20){
@@ -68,12 +58,20 @@ echo "<span class='pagesnot'>Next</span>";
 }
 ?>
 </div>
+<div class="clearshit"></div>
+</div>
+<?php
+if (file_exists("nav.txt") == 1){
+echo '<div id="nav">';
+include 'nav.txt';
+echo '</div>';
+}
+?>
+</div>
 <?php
 $total = $index - 10; #must bring down total so index can drop to the same number as total, counting down
 if ($index > 0){
-/*echo "<p>Test:" . $index . "</p>";*/
 while ($index > $total){
-		/*echo "<p>Test:" . $index . "</p>";*/
 		if (file_exists("photos/" . $index . ".jpg") == "True") {
 		$exif_data = exif_read_data("photos/" . $index . ".jpg");
 		$edate = date("Y-m-d", strtotime($exif_data['DateTimeOriginal']));
