@@ -2,9 +2,10 @@
 
 import glob
 import os
+import getpass
 
 #------------------------------------------------------------------------
-maindir = "/home/user/photos-upload/" #where the photos and count file will be, use absolute paths
+maindir = "/home/" + getpass.getuser() + "/photos-upload/" #where the photos and count file will be, use absolute paths
 offsiteloc = "url.org:/var/www/photos/" #the server to send to include exact path "myserver.com:/var/www/photos/"
 #------------------------------------------------------------------------
 
