@@ -8,25 +8,27 @@ maindir = "/home/user/photos-upload/" #where the photos and count file will be, 
 offsiteloc = "url.org:/var/www/photos/" #the server to send to include exact path "myserver.com:/var/www/photos/"
 #------------------------------------------------------------------------
 
-if len(maindir) != 0:
-	if maindir[-1] != "/":
-		maindir = maindir + "/"
+olddir = os.path.join(maindir, "old")
 
-if len(offsiteloc) != 0:
-	if offsiteloc[-1] != "/":
-		offsiteloc = offsiteloc + "/"
+logger = logging.getLogger("upload")
+logger.setLevel(logging.INFO)
 
-if os.path.exists(maindir + "count.txt") == False:
-	with open(maindir + "count.txt","w") as handle:
+if not maindir or not offsiteloc:
+	raise RuntimeException("Ensure you have set the maindir and offsiteloc "
+			       "configuration variables.")
+
+if os.path.exists(os.path.join(maindir, "count.txt")) == False:
+	# Initialise the counter
+	with open(os.path.join(maindir, "count.txt"), "w") as handle:
 		handle.write("0")
 
-if os.path.exists(maindir + "old/") == False:
-	os.system("mkdir " + maindir + "old/")
+if os.path.exists(olddir) == False:
+	os.system("mkdir " + olddir)
 
-with open(maindir + "count.txt","r") as handle:
+with open(os.path.join(maindir, "count.txt"), "r") as handle:
 	count = int(handle.read())
 
-files = glob.glob(maindir + "*")
+files = glob.glob(os.path.join(maindir, "*"))
 
 photos = []
 for x in files:
