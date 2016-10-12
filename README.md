@@ -1,25 +1,14 @@
 # simple-gallery
 simple photos gallery
 
-Example: http://photos.yakamo.org
-Example: http://pics.foxk.it
+[![Build Status](https://travis-ci.org/irl/simple-gallery.svg?branch=master)](https://travis-ci.org/irl/simple-gallery)
+[![Coverage Status](https://coveralls.io/repos/github/irl/simple-gallery/badge.svg?branch=master)](https://coveralls.io/github/irl/simple-gallery?branch=master)
 
-This is a simple single file photo gallery, this is very rough and improvements n suggestions welcome.
+This is a fork of [yakamo's simple single file photo
+gallery](https://github.com/yakamok/simple-gallery) that converts it to a
+static site generator, no longer requiring PHP.
 
-If you want to have a nav bar, just add "nav.txt" with the relevent html links in it, this will appear at the top of the page just under the titles.  
-
-I have added upload.py which is photogall.sh rewriten in python.  
-make sure to create a file called count.txt <- this file keeps track of the file numbering  
-
-requirements:
--------------
-rsync
-
-imagemagick
-
-ToDo:
------
-  
-fix "undefined index" error  
-figure out some kind of error checking for missing files in the count sequence  
-add watermarking to the python uploader and options to choose image resize as well  
+Requirements
+------------
+* rsync
+* imagemagick
