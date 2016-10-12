@@ -11,7 +11,6 @@ sourcedir = "/home/user/photos-upload/" #where the photos and count file will be
 publishdir = "url.org:/var/www/photos/" #the server to send to include exact path "myserver.com:/var/www/photos/"
 #------------------------------------------------------------------------
 
-olddir = os.path.join(sourcedir, "old")
 
 logging.basicConfig()
 #logger.setLevel(logging.INFO)
@@ -22,18 +21,20 @@ class SimpleGallery:
         logger = logging.getLogger("upload")
         self.sourcedir = os.path.abspath(sourcedir)
         self.publishdir = publishdir
+        self.olddir = os.path.join(sourcedir, "old")
         logger.debug("Source directory is set to: {}".format(self.sourcedir))
         logger.debug("Publish directory is set to: {}".format(self.publishdir))
 
     def _check_paths(self):
-        if os.path.exists(os.path.join(self.sourcedir, "count.txt")) == False:
-            # Initialise the counter
-            with open(os.path.join(self.sourcedir, "count.txt"), "w") as handle:
-                handle.write("0")
+        if not os.path.exists(self.sourcedir):
+            os.makedir(self.sourcedir)
 
-        if os.path.exists(olddir) == False:
-            # Create olddir
-            subprocess.check_output(["mkdir", olddir])
+        if not os.path.exists(os.path.join(self.sourcedir, "count.txt")):
+            with open(os.path.join(self.sourcedir, "count.txt"), "w") as ch:
+                ch.write("0")
+
+        if not os.path.exists(self.olddir):
+            os.makedir(self.olddir)
 
     def _read_count(self):
         with open(os.path.join(self.sourcedir, "count.txt"), "r") as ch:
